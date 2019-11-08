@@ -48,7 +48,7 @@ func main() {
 
 func loadModel() error {
 	// Load inception model
-	model, err := ioutil.ReadFile("/model/tensorflow_inception_graph.pb")
+	model, err := ioutil.ReadFile("/model/saved_model.pb")
 	if err != nil {
 		return err
 	}
@@ -63,7 +63,7 @@ func loadModel() error {
 	}
 
 	// Load labels
-	labelsFile, err := os.Open("/model/imagenet_comp_graph_label_strings.txt")
+	labelsFile, err := os.Open("/model/saved_model_labels.pbtxt")
 	if err != nil {
 		return err
 	}

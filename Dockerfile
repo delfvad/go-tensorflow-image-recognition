@@ -61,10 +61,12 @@ ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 
 # Download InceptionV3 model
-RUN mkdir -p /model && \
-  wget "https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip" -O /model/inception.zip && \
-  unzip /model/inception.zip -d /model && \
-  chmod -R 777 /model
+# RUN mkdir -p /model && \
+#   wget "https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip" -O /model/inception.zip && \
+#   unzip /model/inception.zip -d /model && \
+#   chmod -R 777 /model
+# Load custom model
+RUN chmod -R 777 /model
 
 # Set up project directory
 WORKDIR "/go/src/github.com/tinrab/go-tensorflow-image-recognition"

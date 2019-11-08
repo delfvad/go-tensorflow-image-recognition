@@ -4,3 +4,5 @@ require (
 	github.com/julienschmidt/httprouter v1.2.0
 	github.com/tensorflow/tensorflow v1.12.0
 )
+
+go 1.13
